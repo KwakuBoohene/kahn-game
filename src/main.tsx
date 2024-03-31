@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element: <Settings />,
   },
   {
-    path: '/settings',
+    path: '/decks',
     element: <Decks />,
   }
 ]);
