@@ -4,6 +4,9 @@ import App from './App.tsx'
 import './styles/index.css'
 import {createBrowserRouter,RouterProvider,} from 'react-router-dom';
 import Landing from './pages/Landing.tsx';
+import Play from './pages/Play.tsx';
+import Settings from './pages/Settings.tsx';
+import Decks from './pages/Decks.tsx';
 
 const router = createBrowserRouter([
   {
@@ -11,13 +14,26 @@ const router = createBrowserRouter([
     element: <Landing/>,
   },
   {
-    path: '/app',
-    element: <App />,
+    path: '/play',
+    element: <Play />,
   },
+  {
+    path: '/settings',
+    element: <Settings />,
+  },
+  {
+    path: '/settings',
+    element: <Decks />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <App>
     <RouterProvider router={router} />
+    </App>
+    
+   
+    
   </React.StrictMode>,
 )
