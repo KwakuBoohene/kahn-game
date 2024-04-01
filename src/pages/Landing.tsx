@@ -11,6 +11,10 @@ export default function Landing() {
         <Card title='Settings' description="Modify the settings of the game" routing="/settings"/>
         <Card title='Decks' description="Create A custom deck, download a new deck to play with" routing='/decks'/>
      </div>
+
+     <div className="flex w-full justify-center my-10">
+      <button className="w-[70%] bg-blue-800">Login</button>
+     </div>
     </div>
   );
 }
