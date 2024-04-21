@@ -1,0 +1,83 @@
+[
+    {
+      "word": "Football",
+      "describing_words": ["Soccer", "goal", "pitch", "team sport"]
+    },
+    {
+      "word": "Basketball",
+      "describing_words": ["Hoops", "court", "dribble", "team sport"]
+    },
+    {
+      "word": "Tennis",
+      "describing_words": ["Racket", "serve", "court", "singles"]
+    },
+    {
+      "word": "Baseball",
+      "describing_words": ["Bat", "pitcher", "diamond", "home run"]
+    },
+    {
+      "word": "Golf",
+      "describing_words": ["Club", "tee", "fairway", "putt"]
+    },
+    {
+      "word": "Swimming",
+      "describing_words": ["Pool", "stroke", "laps", "diving"]
+    },
+    {
+      "word": "Running",
+      "describing_words": ["Sprint", "marathon", "track", "endurance"]
+    },
+    {
+      "word": "Cycling",
+      "describing_words": ["Bike", "race", "peloton", "tour"]
+    },
+    {
+      "word": "Boxing",
+      "describing_words": ["Ring", "punch", "knockout", "champion"]
+    },
+    {
+      "word": "Hockey",
+      "describing_words": ["Ice", "puck", "stick", "goalie"]
+    },
+    {
+      "word": "Cristiano Ronaldo",
+      "describing_words": ["Striker", "GOAT", "Goal Scorer", "Football"]
+    },
+    {
+      "word": "Lionel Messi",
+      "describing_words": ["Playmaker", "Legendary", "Barcelona", "Football"]
+    },
+    {
+      "word": "Michael Jordan",
+      "describing_words": ["NBA", "Bulls", "GOAT", "Champion"]
+    },
+    {
+      "word": "Serena Williams",
+      "describing_words": ["Grand Slam", "Champion", "Athlete", "Tennis"]
+    },
+    {
+      "word": "Tom Brady",
+      "describing_words": ["NFL", "Quarterback", "GOAT", "Champion"]
+    },
+    {
+      "word": "Usain Bolt",
+      "describing_words": ["Sprinter", "Record Breaker", "Fastest Man", "Olympian"]
+    },
+    {
+      "word": "Roger Federer",
+      "describing_words": ["Swiss", "Grand Slam", "Graceful", "Tennis"]
+    },
+    {
+      "word": "Steph Curry",
+      "describing_words": ["Warriors", "Sharpshooter", "MVP", "NBA"]
+    },
+    {
+      "word": "Rafael Nadal",
+      "describing_words": ["Spanish", "Clay Court", "Warrior", "Tennis"]
+    },
+    {
+      "word": "Kevin Durant",
+      "describing_words": ["Nets", "Scorer", "Tall", "NBA"]
+    }
+  ]
+  

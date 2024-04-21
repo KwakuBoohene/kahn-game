@@ -1,0 +1,122 @@
+[
+  {
+    "word": "Gourmet",
+    "describing_words": ["Delicacy", "fine dining", "sophisticated", "luxurious"]
+  },
+  {
+    "word": "Savory",
+    "describing_words": ["Flavorful", "tasty", "rich", "hearty"]
+  },
+  {
+    "word": "Culinary",
+    "describing_words": ["Cooking", "chef", "gastronomy", "cuisine"]
+  },
+  {
+    "word": "Exotic",
+    "describing_words": ["Foreign", "unusual", "unique", "tropical"]
+  },
+  {
+    "word": "Spicy",
+    "describing_words": ["Hot", "fiery", "zesty", "flavorful"]
+  },
+  {
+    "word": "Decadent",
+    "describing_words": ["Indulgent", "luxurious", "rich", "sinful"]
+  },
+  {
+    "word": "Fresh",
+    "describing_words": ["Crisp", "new", "organic", "vibrant"]
+  },
+  {
+    "word": "Homemade",
+    "describing_words": ["Handcrafted", "made from scratch", "home-cooked", "authentic"]
+  },
+  {
+    "word": "Wholesome",
+    "describing_words": ["Nutritious", "healthy", "nourishing", "good for you"]
+  },
+  {
+    "word": "Flavorful",
+    "describing_words": ["Tasty", "delicious", "aromatic", "full of flavor"]
+  },
+  {
+    "word": "Umami",
+    "describing_words": ["Savory", "rich", "meaty", "flavorful"]
+  },
+  {
+    "word": "Mouthwatering",
+    "describing_words": ["Appetizing", "delicious", "tempting", "delectable"]
+  },
+  {
+    "word": "Fusion",
+    "describing_words": ["Blend", "combination", "merger", "cross-cultural"]
+  },
+  {
+    "word": "Organic",
+    "describing_words": ["Natural", "chemical-free", "healthy", "sustainable"]
+  },
+  {
+    "word": "Zesty",
+    "describing_words": ["Lively", "flavorful", "tangy", "refreshing"]
+  },
+  {
+    "word": "Comforting",
+    "describing_words": ["Soothing", "warm", "familiar", "homely"]
+  },
+  {
+    "word": "Hearty",
+    "describing_words": ["Satisfying", "filling", "substantial", "nourishing"]
+  },
+  {
+    "word": "Delectable",
+    "describing_words": ["Delicious", "scrumptious", "tempting", "mouthwatering"]
+  },
+  {
+    "word": "Aromatic",
+    "describing_words": ["Fragrant", "perfumed", "scented", "smelling"]
+  },
+  {
+    "word": "Crispy",
+    "describing_words": ["Crunchy", "golden", "fried", "textured"]
+  },
+  {
+    "word": "Melt-in-your-mouth",
+    "describing_words": ["Tender", "succulent", "soft", "delicate"]
+  },
+  {
+    "word": "Sizzling",
+    "describing_words": ["Hot", "crackling", "searing", "steaming"]
+  },
+  {
+    "word": "Artisan",
+    "describing_words": ["Handcrafted", "traditional", "skillfully made", "artisanal"]
+  },
+  {
+    "word": "Sustainable",
+    "describing_words": ["Eco-friendly", "environmentally conscious", "green", "ethical"]
+  },
+  {
+    "word": "Nutrient-rich",
+    "describing_words": ["Healthy", "nutritious", "packed with nutrients", "beneficial"]
+  },
+  {
+    "word": "Seasonal",
+    "describing_words": ["Fresh", "timely", "in season", "locally sourced"]
+  },
+  {
+    "word": "Fragrant",
+    "describing_words": ["Aromatic", "perfumed", "scented", "aromatic"]
+  },
+  {
+    "word": "Juicy",
+    "describing_words": ["Tender", "succulent", "moist", "refreshing"]
+  },
+  {
+    "word": "Flaky",
+    "describing_words": ["Tender", "crisp", "layered", "delicate"]
+  },
+  {
+    "word": "Vibrant",
+    "describing_words": ["Colorful", "bright", "energetic", "lively"]
+  }
+]

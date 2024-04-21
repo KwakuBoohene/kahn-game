@@ -1,0 +1,123 @@
+[
+    {
+      "word": "Musician",
+      "describing_words": ["Instrumentalist", "artist", "performer", "talented"]
+    },
+    {
+      "word": "Album",
+      "describing_words": ["Record", "collection", "tracks", "release"]
+    },
+    {
+      "word": "Guitar",
+      "describing_words": ["Strings", "instrument", "acoustic", "electric"]
+    },
+    {
+      "word": "Concert",
+      "describing_words": ["Live", "performance", "crowd", "venue"]
+    },
+    {
+      "word": "Piano",
+      "describing_words": ["Keys", "instrument", "classical", "grand"]
+    },
+    {
+      "word": "Songwriter",
+      "describing_words": ["Lyricist", "composer", "creative", "versatile"]
+    },
+    {
+      "word": "Drummer",
+      "describing_words": ["Percussionist", "beat", "rhythm", "drum kit"]
+    },
+    {
+      "word": "Singer",
+      "describing_words": ["Vocalist", "voice", "melody", "performance"]
+    },
+    {
+      "word": "Rock",
+      "describing_words": ["Genre", "band", "guitar", "energy"]
+    },
+    {
+      "word": "Jazz",
+      "describing_words": ["Genre", "improvisation", "swing", "rhythm"]
+    },
+    {
+      "word": "Hip-hop",
+      "describing_words": ["Genre", "rap", "urban", "lyrics"]
+    },
+    {
+      "word": "Classical",
+      "describing_words": ["Genre", "symphony", "orchestra", "composer"]
+    },
+    {
+      "word": "Electronic",
+      "describing_words": ["Genre", "synthesizer", "beats", "dance"]
+    },
+    {
+      "word": "Beatles",
+      "describing_words": ["Band", "British", "legendary", "albums"]
+    },
+    {
+      "word": "Mozart",
+      "describing_words": ["Composer", "piano", "symphony", "genius"]
+    },
+    {
+      "word": "Beyoncé",
+      "describing_words": ["Singer", "artist", "iconic", "albums"]
+    },
+    {
+      "word": "Eminem",
+      "describing_words": ["Rapper", "lyricist", "Detroit", "albums"]
+    },
+    {
+      "word": "Taylor Swift",
+      "describing_words": ["Singer", "songwriter", "pop", "albums"]
+    },
+    {
+      "word": "Pink Floyd",
+      "describing_words": ["Band", "psychedelic", "albums", "progressive"]
+    },
+    {
+      "word": "Bob Marley",
+      "describing_words": ["Reggae", "legend", "peace", "albums"]
+    },
+    {
+      "word": "Michael Jackson",
+      "describing_words": ["Pop", "icon", "King of Pop", "albums"]
+    },
+    {
+      "word": "Prince",
+      "describing_words": ["Musician", "artist", "purple", "albums"]
+    },
+    {
+      "word": "Adele",
+      "describing_words": ["Singer", "vocal powerhouse", "soulful", "albums"]
+    },
+    {
+      "word": "Nirvana",
+      "describing_words": ["Band", "grunge", "Seattle", "albums"]
+    },
+    {
+      "word": "The Rolling Stones",
+      "describing_words": ["Band", "rock", "British", "albums"]
+    },
+    {
+      "word": "Elvis Presley",
+      "describing_words": ["King of Rock and Roll", "iconic", "legendary", "albums"]
+    },
+    {
+      "word": "Madonna",
+      "describing_words": ["Pop", "queen", "iconic", "albums"]
+    },
+    {
+      "word": "Johnny Cash",
+      "describing_words": ["Country", "legend", "outlaw", "albums"]
+    },
+    {
+      "word": "Frank Sinatra",
+      "describing_words": ["Crooner", "jazz", "iconic", "albums"]
+    },
+    {
+      "word": "Queen",
+      "describing_words": ["Band", "rock", "iconic", "albums"]
+    }
+  ]
+  
