@@ -16,7 +16,7 @@ export const decks = [
     },
     {
         id: '23432423434d434',
-        name: 'Deck 4',
+        name: 'Music',
         file_name: 'deck_4.json'
     }
 ]
