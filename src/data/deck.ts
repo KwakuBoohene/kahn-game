@@ -1,4 +1,6 @@
-export const decks = [
+import { Deck } from "../types/deck.model";
+
+export const decks:Deck[] = [
     {
         id: '234324d434',
         name: 'Random',
