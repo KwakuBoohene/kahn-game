@@ -62,9 +62,9 @@ export default function Live() {
         <div className=""></div>
       </div>
       <div className="flex justify-between my-10 text-lg">
-        <button className="">Right</button>
-        <button className="">Wrong</button>
-        <button className="">Skip</button>
+        <button onClick={()=>increaseScore()} className="">Right</button>
+        <button onClick={()=>decreaseScore()} className="">Wrong</button>
+        <button onClick={()=>goToNextCard()} className="">Skip</button>
       </div>
           </>
         )
