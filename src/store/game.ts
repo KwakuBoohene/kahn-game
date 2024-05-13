@@ -1,10 +1,11 @@
 import { create } from "zustand";
 import { Deck } from "../types/deck.model";
 import { devtools } from "zustand/middleware";
-import { Route } from "react-router-dom";
+import { decks } from "../data/deck";
+
 
 export interface GameStore {
-  selected_deck: Deck | undefined;
+  selected_deck: Deck;
   setDeck: (deck: Deck) => void;
   duration?: number;
   rounds?: number;
@@ -19,7 +20,7 @@ export interface GameStore {
 }
 
 const gameStore = (set: Function) => ({
-  selected_deck: undefined,
+  selected_deck: decks[0],
   duration: 60,
   rounds: 4,
   team_one: {
@@ -43,7 +44,7 @@ const gameStore = (set: Function) => ({
     set((state: GameStore) => ({ team_two: { ...state.team_two, score } })),
   reset: () =>
     set({
-      selected_deck: undefined,
+      selected_deck: decks[0],
       duration: 60,
       rounds: 4,
       team_one: { name: "Team 1", score: 0 },

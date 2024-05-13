@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function StartGame() {
+  const naivgate = useNavigate();
+
   return (
     <div className="w-full">
       <div className="flex justify-between">
@@ -26,7 +30,7 @@ export default function StartGame() {
       </div>
 
       <div className="flex justify-center my-4">
-        <button className="text-3xl font-bold">LETS PLAY!!!</button>
+        <button onClick={() => { naivgate('/live')}} className="text-3xl font-bold">LETS PLAY!!!</button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-[
+{
+  "deck": [
     {
       "word": "Adventure",
       "describing_words": ["Exciting", "journey", "exploration", "risk"]
@@ -120,4 +121,4 @@
       "describing_words": ["Magnificence", "glory", "grandeur", "beauty"]
     }
   ]
-  
+}

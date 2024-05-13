@@ -1,4 +1,5 @@
-[
+{
+  "deck": [
     {
       "word": "Musician",
       "describing_words": ["Instrumentalist", "artist", "performer", "talented"]
@@ -101,7 +102,12 @@
     },
     {
       "word": "Elvis Presley",
-      "describing_words": ["King of Rock and Roll", "iconic", "legendary", "albums"]
+      "describing_words": [
+        "King of Rock and Roll",
+        "iconic",
+        "legendary",
+        "albums"
+      ]
     },
     {
       "word": "Madonna",
@@ -120,4 +126,4 @@
       "describing_words": ["Band", "rock", "iconic", "albums"]
     }
   ]
-  
+}

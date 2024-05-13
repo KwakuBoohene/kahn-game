@@ -1,4 +1,5 @@
-[
+{
+  "deck": [
     {
       "word": "Football",
       "describing_words": ["Soccer", "goal", "pitch", "team sport"]
@@ -61,7 +62,12 @@
     },
     {
       "word": "Usain Bolt",
-      "describing_words": ["Sprinter", "Record Breaker", "Fastest Man", "Olympian"]
+      "describing_words": [
+        "Sprinter",
+        "Record Breaker",
+        "Fastest Man",
+        "Olympian"
+      ]
     },
     {
       "word": "Roger Federer",
@@ -80,4 +86,4 @@
       "describing_words": ["Nets", "Scorer", "Tall", "NBA"]
     }
   ]
-  
+}

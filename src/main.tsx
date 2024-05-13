@@ -7,6 +7,7 @@ import Play from "./pages/Play.tsx";
 import Settings from "./pages/Settings.tsx";
 import Decks from "./pages/Decks.tsx";
 import StartGame from "./pages/StartGame.tsx";
+import Live from "./pages/Live.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     path: "/start-game",
     element: <StartGame/>
   },
+  {
+    path:'/live',
+    element: <Live/>
+  }
   
 ]);
 

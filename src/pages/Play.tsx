@@ -1,6 +1,6 @@
 import { decks } from "../data/deck";
 import { useNavigate } from "react-router-dom";
-import {  GameStore, useGameStore } from "../store/game";
+import { GameStore, useGameStore } from "../store/game";
 
 export default function Play() {
   const navigate = useNavigate();
@@ -9,8 +9,9 @@ export default function Play() {
     <div className="">
       <div className="">Please select a deck to play with </div>
       <div className="flex py-10">
-        {decks.map((deck) => (
+        {decks.map((deck, index: number) => (
           <div
+            key={index}
             onClick={() => {
               setDeck(deck);
               navigate("/start-game");
