@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useGameStore } from "../store/game";
 import { Deck, DeckData } from "../types/deck.model";
+
 import GameTimer from "../components/shared/Timer";
 
 export default function Live() {
@@ -28,7 +29,6 @@ export default function Live() {
   }
 
   const getTimeFromTimer = (e: number) => {
-   console.log(e);
    setTimeLeft(e);
   }
 

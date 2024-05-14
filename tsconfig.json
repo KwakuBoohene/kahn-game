@@ -21,8 +21,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "use-sound": ["./src/types/use-sound"],
+    }
   },
+  
   "include": ["src", "src/pages"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

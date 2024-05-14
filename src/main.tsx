@@ -8,6 +8,7 @@ import Settings from "./pages/Settings.tsx";
 import Decks from "./pages/Decks.tsx";
 import StartGame from "./pages/StartGame.tsx";
 import Live from "./pages/Live.tsx";
+import Layout from "./layouts/Layout.tsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <Layout>
     <RouterProvider router={router}></RouterProvider>
+    </Layout>
+   
   </React.StrictMode>
 );
