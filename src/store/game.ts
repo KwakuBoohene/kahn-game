@@ -23,6 +23,8 @@ const gameStore = (set: Function) => ({
   selected_deck: decks[0],
   duration: 60,
   rounds: 4,
+  selected_round: 1,
+  selected_team: 1,
   team_one: {
     name: "Team 1",
     score: 0,
@@ -34,6 +36,8 @@ const gameStore = (set: Function) => ({
   setDeck: (deck: Deck) => set({ selected_deck: deck }),
   setDuration: (duration: number) => set({ duration }),
   setRounds: (rounds: number) => set({ rounds }),
+  setSelectedRound: (selected_round: number) => set({ selected_round }),
+  setSelectedTeam: (selected_team: number) => set({ selected_team }),
   setTeamOneName: (name: string) =>
     set((state: GameStore) => ({ team_one: { ...state.team_one, name } })),
   setTeamTwoName: (name: string) =>
@@ -49,6 +53,7 @@ const gameStore = (set: Function) => ({
       rounds: 4,
       team_one: { name: "Team 1", score: 0 },
       team_two: { name: "Team 2", score: 0 },
+      selected_team:1,
     }),
 });
 

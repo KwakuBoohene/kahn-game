@@ -6,7 +6,7 @@ interface props {
 }
 
 export default function GameTimer(props:props){
-    const Ref:React.MutableObject<null|number> = useRef(null);
+    const Ref:React.MutableRefObject<null|number> = useRef(null);
     const [timer, setTimer] = useState("00:00:00");
    
     const getTimeRemaining = (e:string) => {
