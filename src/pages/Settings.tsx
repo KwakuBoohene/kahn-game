@@ -1,6 +1,6 @@
 import letItGo from '../assets/music/let-it-go-12279.mp3'
-import {useEffect, useState} from "react";
-import settingsStore from '../store/settings'
+import { useState} from "react";
+// import settingsStore from '../store/settings'
 
 export default function Settings(){
 
