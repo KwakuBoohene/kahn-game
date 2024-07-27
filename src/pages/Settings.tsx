@@ -4,7 +4,7 @@ import settingsStore from '../store/settings'
 
 export default function Settings(){
 
-    const {settings, setSettings} = settingsStore()
+    // const [settings, setSettings] = settingsStore()
     const [audio] = useState(new Audio(letItGo))
 
 
@@ -19,7 +19,7 @@ export default function Settings(){
     // }, [settings.music, audio])
 
     const toggleMusic = async (status: boolean) => {
-        setSettings({...settings, music: status})
+        // setSettings({...settings, music: status})
         if (status){
             try {
                 await audio.play()
