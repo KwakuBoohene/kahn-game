@@ -7,7 +7,7 @@ export default function Layout(props: { children: ReactNode }) {
   const [play] = useSound(song_1);
 
   useEffect(() => {
-    play();
+    // play();
   }, []);
-  return <>{props.children}</>;
+  return <div className="layout-container">{props.children}</div>;
 }

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
+import {Button} from '@chakra-ui/react'
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function Landing() {
      </div>
 
      <div className="flex w-full justify-center my-10">
-      <button onClick={()=>navigate('/login')} className="w-[70%] bg-blue-800">Login</button>
+      <Button  onClick={()=>navigate('/login')} className="w-[70%] bg-blue-800">Login</Button>
      </div>
     </div>
   );

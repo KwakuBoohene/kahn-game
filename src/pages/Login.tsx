@@ -1,6 +1,37 @@
 import logo from "../assets/favicon.png";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import * as Yup from "yup";
+
+interface SignInFormValues {
+  email: string;
+  password: string;
+}
 
 export default function Login() {
+  const input_field_style =
+    "block px-3 w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset bg-white    focus:ring-indigo-600 sm:text-sm sm:leading-6";
+
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  });
+
+  const onSubmit = (
+    values: SignInFormValues,
+    actions: FormikHelpers<SignInFormValues>
+  ) => {
+    console.log(values);
+    actions.setSubmitting(false);
+  };
+
   return (
     <div>
       <div className=""></div>
@@ -16,63 +47,47 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
-            <div>
-              <div className="flex w-full justify-start">
-                <label className="block text-sm font-medium leading-6 text-white">
-                  Email address
-                </label>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="block
-                  px-3 w-full rounded-md border-0 py-1.5
-                   text-white shadow-sm ring-1 ring-inset
-                    ring-gray-300 placeholder:text-gray-400 
-                    focus:ring-2 focus:ring-inset bg-white
-                     focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+            className="space-y-6"
+          >
+            {(formik) => (
+              <Form>
+                {(Object.keys(formik.values) || []).map((input_key, count) => (
+                  <div className="py-2" key={count}>
+                    <div>
+                      <div className="flex w-full justify-start ">
+                        <label className="block text-sm font-medium leading-6 text-white">
+                        {input_key.charAt(0).toUpperCase() + input_key.slice(1)}
+                        </label>
+                      </div>
+                      <div className="mt-2">
+                        <Field
+                          id={input_key}
+                          name={input_key}
+                          type={input_key}
+                          as="input"
+                          className={input_field_style}
+                        />
+                      </div>
+                      {
+                        // Show error message if there is an error
+                        formik.touched[input_key as keyof typeof formik.touched] && formik.errors[input_key as keyof typeof formik.errors] ? (<>
+                      <ErrorMessage name={input_key} component="div" className="text-red-500 py-1" />
+</>):null
+                      }
+                    </div>
+                  </div>
+                ))}
 
-            <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-white"
-                >
-                  Password
-                </label>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  className="block w-full rounded-md border-0
-                   py-1.5 px-3 text-white shadow-sm ring-1 ring-inset
-             ring-gray-300 placeholder:text-gray-400 focus:ring-2
-              focus:ring-inset focus:ring-indigo-600 sm:text-sm
-               sm:leading-6 bg-white"
-                />
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign in
-              </button>
-            </div>
-          </form>
+                <div className="my-6">
+                  <Button type="submit">Sign In</Button>
+                </div>
+              </Form>
+            )}
+          </Formik>
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Forgot your password?
