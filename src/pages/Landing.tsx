@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 
 export default function Landing() {
+  const navigate = useNavigate();
   return (
     <div>
         <div className="">
@@ -13,7 +15,7 @@ export default function Landing() {
      </div>
 
      <div className="flex w-full justify-center my-10">
-      <button className="w-[70%] bg-blue-800">Login</button>
+      <button onClick={()=>navigate('/login')} className="w-[70%] bg-blue-800">Login</button>
      </div>
     </div>
   );

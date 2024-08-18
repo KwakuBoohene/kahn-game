@@ -8,6 +8,7 @@ import Settings from "./pages/Settings.tsx";
 import Decks from "./pages/Decks.tsx";
 import StartGame from "./pages/StartGame.tsx";
 import Live from "./pages/Live.tsx";
+import Login from "./pages/Login.tsx";
 import Layout from "./layouts/Layout.tsx";
 
 const router = createBrowserRouter([
@@ -34,8 +35,12 @@ const router = createBrowserRouter([
   {
     path:'/live',
     element: <Live/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
   }
-  
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

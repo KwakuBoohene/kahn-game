@@ -58,6 +58,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.dark-bg-color{
+  background-color: #1a1a1a;
+}
+
 #root {
   max-width: 1280px;
   min-width: 400px;
