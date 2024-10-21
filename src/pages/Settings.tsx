@@ -1,26 +1,13 @@
 import { Button } from '@chakra-ui/react';
-import letItGo from '../assets/music/let-it-go-12279.mp3'
-import { useState} from "react";
-// import settingsStore from '../store/settings'
+import { useEffect, useState} from "react";
+import {useSettingsStore} from '../store/settings'
 
 export default function Settings(){
 
-    // const [settings, setSettings] = settingsStore()
-    const [audio] = useState(new Audio(letItGo))
-
-
-    // useEffect(() => {
-    //     if (settings.music){
-    //         audio.pause()
-    //         audio.currentTime = 0
-    //
-    //     } else {
-    //         audio.pause()
-    //     }
-    // }, [settings.music, audio])
-
+    // const settings = useSettingsStore((state)=>state.settings)
+    const audio = useSettingsStore((state)=>[state.audio])[0]
+    
     const toggleMusic = async (status: boolean) => {
-        // setSettings({...settings, music: status})
         if (status){
             try {
                 await audio.play()
@@ -30,6 +17,7 @@ export default function Settings(){
         }else {
             audio.pause()
         }
+
     }
 
     return (<div className="">
