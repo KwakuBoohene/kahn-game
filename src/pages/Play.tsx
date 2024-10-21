@@ -1,6 +1,7 @@
 import { decks } from "../data/deck";
 import { useNavigate } from "react-router-dom";
 import { GameStore, useGameStore } from "../store/game";
+import { Button } from "@chakra-ui/react";
 
 export default function Play() {
   const navigate = useNavigate();
@@ -25,14 +26,14 @@ export default function Play() {
       </div>
       <div className="">OR</div>
       <div className="py-2">
-        <button
+        <Button color='white' bg='green.500'
           onClick={() => {
             navigate("/start-game");
           }}
           className=""
         >
           Get Started Right now!
-        </button>
+        </Button>
       </div>
     </div>
   );

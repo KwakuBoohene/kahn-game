@@ -3,6 +3,7 @@ import { useGameStore } from "../store/game";
 import { Deck, DeckData } from "../types/deck.model";
 
 import GameTimer from "../components/shared/Timer";
+import { Button } from "@chakra-ui/react";
 
 export default function Live() {
   const deck = useGameStore((state) => state.selected_deck);
@@ -62,7 +63,7 @@ export default function Live() {
   useEffect(() => {}, []);
 
   return (
-    <div>
+    <div className="min-w-[300px]">
       {cardnumber === cards.length - 1 || time_left === 0 ? (
         <div>
           <div className="text-3xl font-bold my-4">
@@ -80,9 +81,9 @@ export default function Live() {
                 {selected_team === 1 ? team_one.score : team_two.score}
               </div>
               <div className="">
-                <button onClick={goToNextTeam} className="">
+                <Button onClick={goToNextTeam} className="">
                 { selected_round===rounds?'Restart': 'Go To next Team'}
-                </button>
+                </Button>
               </div>
             </>
           )}
@@ -113,16 +114,16 @@ export default function Live() {
 
             <div className=""></div>
           </div>
-          <div className="flex justify-between my-10 text-lg">
-            <button onClick={() => increaseScore()} className="">
+          <div className="flex justify-between my-10 text-lg  w-full">
+            <Button size={'sm'} onClick={() => increaseScore()} className="">
               Right
-            </button>
-            <button onClick={() => decreaseScore()} className="">
+            </Button>
+            <Button size={'sm'}  onClick={() => decreaseScore()} className="">
               Wrong
-            </button>
-            <button onClick={() => goToNextCard()} className="">
+            </Button>
+            <Button size={'sm'}  onClick={() => goToNextCard()} className="">
               Skip
-            </button>
+            </Button>
           </div>
         </>
       )}
