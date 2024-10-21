@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react';
 import letItGo from '../assets/music/let-it-go-12279.mp3'
 import { useState} from "react";
 // import settingsStore from '../store/settings'
@@ -34,21 +35,21 @@ export default function Settings(){
     return (<div className="">
         <div className="flex justify-between my-2 items-center ">
             <span className="">Music</span>
-            <span className="">
+            <span className="mx-2">
                 <span className="flex w-36 justify-between ">
 
-                    <button className="" onClick={() => toggleMusic(true)}>On</button>
-                    <button className="" onClick={() => toggleMusic(false)}>Off</button>
+                    <Button className="" onClick={() => toggleMusic(true)}>On</Button>
+                    <Button className="" onClick={() => toggleMusic(false)}>Off</Button>
                 </span>
             </span>
         </div>
 
         <div className="flex justify-between items-center my-2">
             <span className="">Sound Effects</span>
-            <span className="">
+            <span className="mx-2">
                 <span className="flex w-36 justify-between ">
-                    <button className="">On</button>
-                    <button className="">Off</button>
+                    <Button className="">On</Button>
+                    <Button className="">Off</Button>
                 </span>
             </span>
         </div>

@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGameStore } from "../store/game";
+import { Button } from "@chakra-ui/react";
 
 export default function StartGame() {
   const naivgate = useNavigate();
@@ -46,13 +47,13 @@ export default function StartGame() {
               type="text"
               className={" max-w-16 bg-transparent"}
             />
-            <button
+            <Button
               type="button"
               onClick={() => inputField1.current?.focus()}
               className="ml-2"
             >
               Edit
-            </button>
+            </Button>
           </div>
         </div>
         <div className="">
@@ -67,13 +68,13 @@ export default function StartGame() {
               className={" max-w-16 bg-transparent"}
             />
 
-            <button
+            <Button
               type="button"
               onClick={() => inputField2.current?.focus()}
               className="ml-2"
             >
               Edit
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -102,9 +103,9 @@ export default function StartGame() {
       </div>
 
       <div className="flex justify-center my-4">
-        <button type="submit" className="text-3xl font-bold">
+        <Button type="submit">
           LETS PLAY!!!
-        </button>
+        </Button>
       </div>
     </form>
   );
