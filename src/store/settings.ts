@@ -14,7 +14,7 @@ export interface SettingStore {
 const settingsStore = (set:Function) => ({
   settings:{
     music: false,
-    sound_effects: false,
+    sound_effects: true,
   },
   audio: new Audio(letItGo),
     setSettings: (settings:{sound_effects:boolean}) => set({settings})
