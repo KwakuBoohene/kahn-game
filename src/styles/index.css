@@ -17,6 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,7 +32,10 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
+}
 
+html,body{
+  background-color: #70706E;
 }
 
 .layout-container {

@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import {Button} from '@chakra-ui/react'
+import logo from "../assets/kaneho_logo.jpg"
+
 
 export default function Landing() {
   const navigate = useNavigate();
   return (
     <div>
-        <div className="">
-            <span className="">KaNeHo</span>
+        <div className="w-full flex justify-center">
+            <img src={logo} alt="" className="w-96 h-auto" />
         </div>
      <div className="menu-options flex justify-center flex-col md:flex-row">
         <Card title='G v G' description="Go head to head with another group" routing="/play"/>
@@ -16,7 +18,7 @@ export default function Landing() {
      </div>
 
      <div className="flex w-full justify-center my-10">
-      <Button  onClick={()=>navigate('/login')} className="w-[70%] bg-blue-800">Login</Button>
+      <Button colorScheme="yellow" onClick={()=>navigate('/login')} className="w-[70%] text-black">Login</Button>
      </div>
     </div>
   );
