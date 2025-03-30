@@ -9,12 +9,20 @@ const config: ThemeConfig =  {
 const styles = {
     global: {
         "html, body": {
-            bg: '#70706E',
+            bg: '#FFE9C9',
             
         }
     }
 };
 
-const theme = extendTheme({ config, styles });
+const theme = extendTheme({
+  config,
+  styles,
+  colors: {
+    orange: {
+      500: '#F97316', // You can adjust this hex code to match your desired orange
+    }
+  }
+});
 
 export default theme;

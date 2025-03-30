@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        'button-outline': '#646cff'
+        'button-outline': '#646cff',
+        'kahn-orange': '#F89C15'
       }
     },
   },
