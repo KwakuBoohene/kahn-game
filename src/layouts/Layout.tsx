@@ -9,5 +9,5 @@ export default function Layout(props: { children: ReactNode }) {
   useEffect(() => {
     // play();
   }, []);
-  return <div className="layout-container w-full">{props.children}</div>;
+  return <div className="h-full min-w-[375px] w-full m-1">{props.children}</div>;
 }

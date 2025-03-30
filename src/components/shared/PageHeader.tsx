@@ -1,6 +1,6 @@
 import logo from "../../assets/logo.svg";
-import settings from "../../assets/settings.svg";
-import profile from "../../assets/profile.svg";
+import settings from "../../assets/icons/settings.svg";
+import profile from "../../assets/icons/profile.svg";
 
 export default function PageHeader() {
     return (

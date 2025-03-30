@@ -5,6 +5,38 @@ import logo from "../assets/logo.svg";
 import { motion } from "framer-motion";
 import PageHeader from "../components/shared/PageHeader";
 
+// Import your icons and images
+import gamepadIcon from "../assets/icons/localPlayIcon.png";
+import deckIcon from "../assets/icons/decksIcon.png";
+import onlineIcon from "../assets/icons/onlinePlayIcon.svg";
+import localPlayBg from "../assets/background_images/localPlayBg.svg";
+import decksBg from "../assets/background_images/cardDeckBg.jpeg";
+import onlinePlayBg from "../assets/background_images/onlinePlayBg.jpeg";
+
+const cards = [
+  {
+    title: "Local Play",
+    description: "Play together with friends on same device",
+    routing: "/play",
+    icon: gamepadIcon,
+    bgImage: localPlayBg
+  },
+  {
+    title: "Decks",
+    description: "View & create custom decks",
+    routing: "/decks",
+    icon: deckIcon,
+    bgImage: decksBg
+  },
+  // {
+  //   title: "Online Play",
+  //   description: "Play with friends all over the world",
+  //   routing: "/online",
+  //   icon: onlineIcon,
+  //   bgImage: onlinePlayBg
+  // }
+];
+
 export default function Landing() {
   const navigate = useNavigate();
 
@@ -14,13 +46,7 @@ export default function Landing() {
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ duration: 3, delay: 0.5 }}
-        onAnimationComplete={() => {
-          const overlay = document.querySelector('.overlay');
-          if (overlay) {
-            overlay.classList.add('pointer-events-none');
-          }
-        }}
-        className="fixed inset-0 bg-kahn-orange w-full z-50  overlay flex items-center justify-center"
+        className="fixed inset-0 bg-kahn-orange w-full z-50 pointer-events-none flex justify-center items-center"
       >
         <motion.img 
           src={logo} 
@@ -32,35 +58,30 @@ export default function Landing() {
         />
       </motion.div>
       
-      <PageHeader />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        <PageHeader />
 
-<div className="menu-options flex justify-center flex-col md:flex-row">
-  <Card
-    title="G rsv G"
-    description="Go head to head with another group"
-    routing="/play"
-  />
-  <Card
-    title="Settings"
-    description="Modify the settings of the game"
-    routing="/settings"
-  />
-  <Card
-    title="Decks"
-    description="Create A custom deck, download a new deck to play with"
-    routing="/decks"
-  />
-</div>
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:flex gap-6">
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                routing={card.routing}
+                icon={card.icon}
+                bgImage={card.bgImage}
+              />
+            ))}
+          </div>
+        </div>
 
-<div className="flex w-full justify-center my-10">
-  <Button
-    colorScheme="yellow"
-    onClick={() => navigate("/login")}
-    className="w-[70%] text-black"
-  >
-    Login
-  </Button>
-</div>
+        
+      </motion.div>
     </>
   );
 }
