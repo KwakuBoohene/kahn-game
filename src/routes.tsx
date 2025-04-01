@@ -5,6 +5,7 @@ import Decks from "./pages/Decks.tsx";
 import StartGame from "./pages/StartGame.tsx";
 import Live from "./pages/Live.tsx";
 import Login from "./pages/Login.tsx";
+import SignUp from "./pages/SignUp.tsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -35,8 +36,11 @@ const router = createBrowserRouter([
     {
       path: "/login",
       element: <Login/>
+    },
+    {
+      path: "/register",
+      element: <SignUp/>
     }
-  
   ]);
 
   export default router;
