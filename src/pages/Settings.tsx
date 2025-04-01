@@ -1,8 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSettingsStore } from "../store/settings";
 import { Switch } from "@chakra-ui/react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+
+// Cookie name for Google Translate
+const COOKIE_NAME = 'googtrans';
+
+interface LanguageDescriptor {
+  name: string;
+  title: string;
+}
+
+declare global {
+  interface Window {
+    __GOOGLE_TRANSLATION_CONFIG__: {
+      languages: LanguageDescriptor[];
+      defaultLanguage: string;
+    };
+  }
+}
 
 export default function Settings() {
   const navigate = useNavigate();
@@ -11,8 +28,59 @@ export default function Settings() {
   const setSoundEffects = useSettingsStore((state) => state.setSettings);
   const [musicVolume, setMusicVolume] = useState(50);
   const [sfxVolume, setSfxVolume] = useState(50);
-  const [language, setLanguage] = useState("ENGLISH");
+  const [currentLangIndex, setCurrentLangIndex] = useState(0);
   const [vibration, setVibration] = useState(false);
+
+  // Initialize translation engine
+  useEffect(() => {
+    // Read the cookie
+    const existingLanguageCookieValue = document.cookie
+      .split('; ')
+      .find(row => row.startsWith(COOKIE_NAME))
+      ?.split('=')[1];
+
+    let languageValue;
+    if (existingLanguageCookieValue) {
+      // Extract language nickname from cookie
+      const sp = existingLanguageCookieValue.split('/');
+      if (sp.length > 2) {
+        languageValue = sp[2];
+      }
+    }
+
+    // Use default language if no cookie is set
+    if (window.__GOOGLE_TRANSLATION_CONFIG__ && !languageValue) {
+      languageValue = window.__GOOGLE_TRANSLATION_CONFIG__.defaultLanguage;
+    }
+
+    if (languageValue && window.__GOOGLE_TRANSLATION_CONFIG__) {
+      const index = window.__GOOGLE_TRANSLATION_CONFIG__.languages.findIndex(
+        lang => lang.name === languageValue
+      );
+      if (index !== -1) {
+        setCurrentLangIndex(index);
+      }
+    }
+  }, []);
+
+  const changeLanguage = (direction: "next" | "prev") => {
+    if (!window.__GOOGLE_TRANSLATION_CONFIG__) return;
+
+    let newIndex;
+    if (direction === "next") {
+      newIndex = (currentLangIndex + 1) % window.__GOOGLE_TRANSLATION_CONFIG__.languages.length;
+    } else {
+      newIndex = currentLangIndex - 1 < 0 
+        ? window.__GOOGLE_TRANSLATION_CONFIG__.languages.length - 1 
+        : currentLangIndex - 1;
+    }
+    setCurrentLangIndex(newIndex);
+
+    // Set the cookie and reload the page
+    const newLang = window.__GOOGLE_TRANSLATION_CONFIG__.languages[newIndex].name;
+    document.cookie = `${COOKIE_NAME}=/auto/${newLang}; path=/`;
+    window.location.reload();
+  };
 
   const toggleMusic = async (value: number) => {
     setMusicVolume(value);
@@ -52,14 +120,24 @@ export default function Settings() {
       <div className="mb-12">
         <h2 className="text-2xl mb-6 anton-font text-black">Language</h2>
         <div className="flex items-center justify-between bg-[#FFE0B2] rounded-lg p-4">
-          <button className="bg-transparent border-none p-0">
+          <button 
+            className="bg-transparent border-none p-0"
+            onClick={() => changeLanguage("prev")}
+          >
             <IoChevronBack size={24} className="text-black" />
           </button>
-          <span className="text-black text-xl">{language}</span>
-          <button className="bg-transparent border-none p-0">
+          <span className="text-black text-xl">
+            {window.__GOOGLE_TRANSLATION_CONFIG__?.languages[currentLangIndex].title}
+          </span>
+          <button 
+            className="bg-transparent border-none p-0"
+            onClick={() => changeLanguage("next")}
+          >
             <IoChevronForward size={24} className="text-black" />
           </button>
         </div>
+        {/* Hidden Google Translate Element */}
+        <div id="google_translate_element" className="hidden"></div>
       </div>
 
       {/* Audio Section */}
