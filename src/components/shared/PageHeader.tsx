@@ -1,11 +1,14 @@
 import logo from "../../assets/logo.svg";
 import settings from "../../assets/icons/settings.svg";
 import profile from "../../assets/icons/profile.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function PageHeader() {
+    const navigate = useNavigate();
+    
     return (
         <div className="flex justify-between items-center w-full ">
-                <span className="cursor-pointer">
+                <span className="cursor-pointer" onClick={() => navigate("/settings")}>
                     <img src={settings} alt="" className="w-10 h-auto" />
                 </span>
                  <img src={logo} alt="" className="w-48 h-auto" />
