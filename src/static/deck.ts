@@ -1,8 +1,8 @@
 import { Deck } from "../types/deck.model";
-import * as deck_1 from "../data/decks/deck_1.json";
-import * as deck_2 from "../data/decks/deck_2.json";
-import * as deck_3 from "../data/decks/deck_3.json";
-import * as deck_4 from "../data/decks/deck_4.json";
+import * as deck_1 from "../static/decks/deck_1.json";
+import * as deck_2 from "../static/decks/deck_2.json";
+import * as deck_3 from "../static/decks/deck_3.json";
+import * as deck_4 from "../static/decks/deck_4.json";
 
 export const decks:Deck[] = [
     {
