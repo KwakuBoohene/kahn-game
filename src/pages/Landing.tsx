@@ -65,7 +65,7 @@ export default function Landing() {
       >
         <PageHeader />
 
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 max-w-lg">
           <div className="grid grid-cols-1 md:flex gap-6">
             {cards.map((card, index) => (
               <Card
