@@ -1,23 +1,8 @@
 import { create } from "zustand";
-import { Deck } from "../types/deck.model";
 import { devtools } from "zustand/middleware";
-import { decks } from "../data/deck";
-
-
-export interface GameStore {
-  selected_deck: Deck;
-  setDeck: (deck: Deck) => void;
-  duration?: number;
-  rounds?: number;
-  team_one: {
-    name: string;
-    score: number;
-  };
-  team_two: {
-    name: string;
-    score: number;
-  };
-}
+import { decks } from "../static/deck";
+import { GameStore, GameMode, GameModeType } from "../types/game.types";
+import { Deck } from "../types/deck.model";
 
 const gameStore = (set: Function) => ({
   selected_deck: decks[0],
@@ -25,6 +10,10 @@ const gameStore = (set: Function) => ({
   rounds: 4,
   selected_round: 1,
   selected_team: 1,
+  game_mode: {
+    isOnline: false,
+    type: "team" as GameModeType
+  },
   team_one: {
     name: "Team 1",
     score: 0,
@@ -38,6 +27,7 @@ const gameStore = (set: Function) => ({
   setRounds: (rounds: number) => set({ rounds }),
   setSelectedRound: (selected_round: number) => set({ selected_round }),
   setSelectedTeam: (selected_team: number) => set({ selected_team }),
+  setGameMode: (game_mode: GameMode) => set({ game_mode }),
   setTeamOneName: (name: string) =>
     set((state: GameStore) => ({ team_one: { ...state.team_one, name } })),
   setTeamTwoName: (name: string) =>
@@ -53,7 +43,11 @@ const gameStore = (set: Function) => ({
       rounds: 4,
       team_one: { name: "Team 1", score: 0 },
       team_two: { name: "Team 2", score: 0 },
-      selected_team:1,
+      selected_team: 1,
+      game_mode: {
+        isOnline: false,
+        type: "team"
+      },
     }),
 });
 

@@ -6,6 +6,7 @@ import StartGame from "./pages/StartGame.tsx";
 import Live from "./pages/Live.tsx";
 import Login from "./pages/Login.tsx";
 import SignUp from "./pages/SignUp.tsx";
+import LocalTeamMode from "./pages/LocalTeamMode.tsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
     {
       path: "/register",
       element: <SignUp/>
+    },
+    {
+      path: "/local-team-settings",
+      element: <LocalTeamMode />
     }
   ]);
 
