@@ -6,6 +6,7 @@ import Live from "./pages/Live.tsx";
 import Login from "./pages/Login.tsx";
 import SignUp from "./pages/SignUp.tsx";
 import LocalTeamMode from "./pages/local-play/LocalTeamMode.tsx";
+import NotFound from "./pages/NotFound.tsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
     {
       path: "/local-team-settings",
       element: <LocalTeamMode />
+    },
+    {
+      path: "*",
+      element: <NotFound />
     }
   ]);
 
