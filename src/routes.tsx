@@ -2,7 +2,7 @@ import Landing from "./pages/Landing.tsx";
 import SelectMode from "./pages/local-play/SelectMode.tsx";
 import Settings from "./pages/Settings.tsx";
 import Decks from "./pages/Decks.tsx";
-import Live from "./pages/Live.tsx";
+import Play from "./pages/local-play/Play.tsx";
 import Login from "./pages/Login.tsx";
 import SignUp from "./pages/SignUp.tsx";
 import LocalTeamMode from "./pages/local-play/LocalTeamMode.tsx";
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
       element: <Decks />,
     },
     {
-      path:'/play',
-      element: <Live/>
+      path:'/local-play',
+      element: <Play/>
     },
     {
       path: "/login",
