@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import PageHeader from "../components/shared/PageHeader";
-import GameSelectionButton from "../components/GameSelectionButton";
-import { useGameStore } from "../store/game";
-import { GameMode, GameModeOption } from "../types/game.types";
+import PageHeader from "../../components/shared/PageHeader";
+import GameSelectionButton from "../../components/GameSelectionButton";
+import { useGameStore } from "../../store/game";
+import { GameMode, GameModeOption } from "../../types/game.types";
 
 const GAME_MODES: GameModeOption[] = [
   {
@@ -25,7 +25,7 @@ const GAME_MODES: GameModeOption[] = [
   },
 ];
 
-export default function Play() {
+export default function SelectMode() {
   const navigate = useNavigate();
   const setGameMode = useGameStore(state => state.setGameMode);
 

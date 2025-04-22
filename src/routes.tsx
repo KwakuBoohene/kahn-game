@@ -1,12 +1,11 @@
 import Landing from "./pages/Landing.tsx";
-import Play from "./pages/Play.tsx";
+import SelectMode from "./pages/local-play/SelectMode.tsx";
 import Settings from "./pages/Settings.tsx";
 import Decks from "./pages/Decks.tsx";
-import StartGame from "./pages/StartGame.tsx";
 import Live from "./pages/Live.tsx";
 import Login from "./pages/Login.tsx";
 import SignUp from "./pages/SignUp.tsx";
-import LocalTeamMode from "./pages/LocalTeamMode.tsx";
+import LocalTeamMode from "./pages/local-play/LocalTeamMode.tsx";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -15,8 +14,8 @@ const router = createBrowserRouter([
       element: <Landing />,
     },
     {
-      path: "/play",
-      element: <Play />,
+      path: "/select-mode",
+      element: <SelectMode />,
     },
     {
       path: "/settings",
@@ -27,11 +26,7 @@ const router = createBrowserRouter([
       element: <Decks />,
     },
     {
-      path: "/start-game",
-      element: <StartGame/>
-    },
-    {
-      path:'/live',
+      path:'/play',
       element: <Live/>
     },
     {

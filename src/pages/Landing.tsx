@@ -17,7 +17,7 @@ const cards = [
   {
     title: "Local Play",
     description: "Play together with friends on same device",
-    routing: "/play",
+    routing: "/select-mode",
     icon: gamepadIcon,
     bgImage: localPlayBg
   },

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import PageHeader from "../components/shared/PageHeader";
-import GameSelectionButton from "../components/GameSelectionButton";
+import PageHeader from "../../components/shared/PageHeader";
+import GameSelectionButton from "../../components/GameSelectionButton";
 
 interface TeamInput {
   id: number;
@@ -91,7 +91,7 @@ export default function LocalGame() {
           {/* Start Game Button */}
           <div className="mt-12 w-full">
             <button
-              onClick={() => navigate("/game")}
+              onClick={() => navigate("/live")}
               className="w-full bg-kahn-orange-dark hover:bg-kahn-orange-light text-white font-bold py-4 rounded-full transition-colors"
             >
               <h1 className="text-2xl font-bold">START GAME</h1>
