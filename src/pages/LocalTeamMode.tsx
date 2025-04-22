@@ -1,30 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import PageHeader from "../components/shared/PageHeader";
+import GameSelectionButton from "../components/GameSelectionButton";
 
-interface TeamProps {
+interface TeamInput {
+  id: number;
   name: string;
-  editable?: boolean;
-  onNameChange?: (name: string) => void;
-}
-
-function TeamNameButton({ name, editable = true, onNameChange }: TeamProps) {
-  return (
-    <div className="relative h-24 my-1">
-      <div className="absolute inset-0 bg-kahn-orange-dark rounded-3xl">
-        <div className="flex items-center h-full px-6">
-          <span className="text-black cursor-pointer">✎</span>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => onNameChange?.(e.target.value)}
-            disabled={!editable}
-            className="bg-transparent text-3xl font-bold text-black w-full focus:outline-none px-2"
-          />
-        </div>
-      </div>
-    </div>
-  );
+  setName: (name: string) => void;
 }
 
 export default function LocalGame() {
@@ -33,9 +16,35 @@ export default function LocalGame() {
   const [team2Name, setTeam2Name] = useState("TEAM 2");
   const [roundCount, setRoundCount] = useState(2);
   const [timeLimit] = useState("1:07"); // This would be connected to a timer component in reality
+  const [showVS, setShowVS] = useState(true);
+
+  const teams: TeamInput[] = [
+    { id: 1, name: team1Name, setName: setTeam1Name },
+    { id: 2, name: team2Name, setName: setTeam2Name },
+  ];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVS(false);
+    }, 500); 
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
+      {/* VS Overlay */}
+      <motion.div 
+        className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none"
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ 
+          opacity: showVS ? 1 : 0,
+          scale: showVS ? 1 : 0.75,
+        }}
+        transition={{ duration: 1, ease: "easeOut" }} // Reduced from 0.75s to 0.5s
+      >
+        <h1 className="text-[450px] font-bold text-white">VS</h1>
+      </motion.div>
+
       <div className="">
         <PageHeader />
         
@@ -61,12 +70,22 @@ export default function LocalGame() {
           </div>
 
           {/* Team Names Section */}
-          <div className="w-full space-y-2 relative">
-            <TeamNameButton name={team1Name} onNameChange={setTeam1Name} />
-            <div className="absolute left-1/2 -translate-x-1/2 z-10 text-6xl font-bold text-white">
-              VS
-            </div>
-            <TeamNameButton name={team2Name} onNameChange={setTeam2Name} />
+          <div className="w-full space-y-6">
+            {teams.map((team) => (
+              <div key={team.id}>
+                <GameSelectionButton>
+                  <h1 className="flex items-center w-full px-6">
+                    <span className="text-black cursor-pointer">✎</span>
+                    <input
+                      type="text"
+                      value={team.name}
+                      onChange={(e) => team.setName(e.target.value)}
+                      className="bg-transparent text-3xl font-bold text-black w-full focus:outline-none px-2"
+                    />
+                  </h1>
+                </GameSelectionButton>
+              </div>
+            ))}
           </div>
 
           {/* Start Game Button */}
@@ -75,7 +94,7 @@ export default function LocalGame() {
               onClick={() => navigate("/game")}
               className="w-full bg-kahn-orange-dark hover:bg-kahn-orange-light text-white font-bold py-4 rounded-full transition-colors"
             >
-              START GAME
+              <h1 className="text-2xl font-bold">START GAME</h1>
             </button>
           </div>
 

@@ -49,10 +49,13 @@ export default function Play() {
             {GAME_MODES.map((mode, index) => (
               <GameSelectionButton
                 key={index}
-                title={mode.title}
-                subtitle={mode.subtitle}
                 onClick={() => handleModeSelection(mode)}
-              />
+              >
+                <div className="flex flex-col items-center">
+                  <h1 className="text-2xl font-bold text-black">{mode.title}</h1>
+                  <span className="text-sm text-black/60">{mode.subtitle}</span>
+                </div>
+              </GameSelectionButton>
             ))}
           </div>
         </div>
