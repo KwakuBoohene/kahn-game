@@ -14,15 +14,15 @@ const GAME_MODES: GameModeOption[] = [
       type: "team"
     }
   },
-  {
-    title: "ONE VS ALL MODE",
-    subtitle: "Play against each other",
-    route: "/one-vs-all",
-    mode: {
-      isOnline: false,
-      type: "one_v_one"
-    }
-  },
+  // {
+  //   title: "ONE VS ALL MODE",
+  //   subtitle: "Play against each other",
+  //   route: "/one-vs-all",
+  //   mode: {
+  //     isOnline: false,
+  //     type: "one_v_one"
+  //   }
+  // },
 ];
 
 export default function SelectMode() {

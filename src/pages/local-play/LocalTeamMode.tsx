@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/shared/PageHeader";
 import GameSelectionButton from "../../components/GameSelectionButton";
 import GameTimer from "../../components/shared/Timer";
 import RoundCounter from "../../components/shared/RoundCounter";
+import { useGameStore } from "../../store/game";
 
 interface TeamInput {
   id: number;
@@ -13,14 +13,24 @@ interface TeamInput {
 
 export default function LocalGame() {
   const navigate = useNavigate();
-  const [team1Name, setTeam1Name] = useState("TEAM 1");
-  const [team2Name, setTeam2Name] = useState("TEAM 2");
-  const [roundCount, setRoundCount] = useState(2);
-  const [gameTime, setGameTime] = useState(67); // 1:07 in seconds
+  
+  // Get state and actions from the game store
+  const { 
+    duration, 
+    rounds, 
+    selected_round,
+    team_one, 
+    team_two,
+    setDuration, 
+    setRounds, 
+    setSelectedRound,
+    setTeamOneName, 
+    setTeamTwoName 
+  } = useGameStore();
 
   const teams: TeamInput[] = [
-    { id: 1, name: team1Name, setName: setTeam1Name },
-    { id: 2, name: team2Name, setName: setTeam2Name },
+    { id: 1, name: team_one.name, setName: setTeamOneName },
+    { id: 2, name: team_two.name, setName: setTeamTwoName },
   ];
 
   return (
@@ -36,21 +46,20 @@ export default function LocalGame() {
         {/* Timer Display */}
         <div className="px-6 py-2 flex w-full justify-center">
           <GameTimer 
-            game_time={gameTime} 
+            game_time={duration} 
             sendTimeToParent={() => {}} 
             isEditable={true}
-            setGameTime={setGameTime}
+            setGameTime={setDuration}
           />
-           </div>
-           <div className="my-4 flex justify-center">
-            <RoundCounter 
-              currentRound={roundCount} 
-              totalRounds={5} 
-              roundIsEditable={true}
-              setCurrentRound={setRoundCount}
-            />
-          </div>
-       
+        </div>
+        <div className="my-4 flex justify-center">
+          <RoundCounter 
+            currentRound={selected_round} 
+            totalRounds={rounds} 
+            roundIsEditable={true}
+            setCurrentRound={setSelectedRound}
+          />
+        </div>
 
         {/* Team Names Section */}
         <div className="w-full space-y-6">
