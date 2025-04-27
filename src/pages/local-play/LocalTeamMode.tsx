@@ -4,6 +4,7 @@ import GameSelectionButton from "../../components/GameSelectionButton";
 import GameTimer from "../../components/shared/Timer";
 import RoundCounter from "../../components/shared/RoundCounter";
 import { useGameStore } from "../../store/game";
+import { decks } from "../../static/deck";
 
 interface TeamInput {
   id: number;
@@ -21,11 +22,13 @@ export default function LocalGame() {
     selected_round,
     team_one, 
     team_two,
+    selected_deck,
     setDuration, 
     setRounds, 
     setSelectedRound,
     setTeamOneName, 
-    setTeamTwoName 
+    setTeamTwoName,
+    setDeck
   } = useGameStore();
 
   const teams: TeamInput[] = [
@@ -93,7 +96,20 @@ export default function LocalGame() {
         {/* Deck Selection */}
         <div className="mt-6 flex items-center space-x-2 text-black">
           <span>✎</span>
-          <span>Ultra Deck (2/5)</span>
+          <select
+            value={selected_deck.id}
+            onChange={e => {
+              const deck = decks.find(d => d.id === e.target.value);
+              if (deck) setDeck(deck);
+            }}
+            className="bg-white border border-gray-300 rounded px-3 py-2 text-lg font-bold focus:outline-none"
+          >
+            {decks.map(deck => (
+              <option key={deck.id} value={deck.id}>
+                {deck.name}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     </div>
