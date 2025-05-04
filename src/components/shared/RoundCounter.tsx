@@ -1,13 +1,11 @@
 interface RoundCounterProps {
   currentRound: number;
-  totalRounds: number;
   roundIsEditable: boolean;
   setCurrentRound: (round: number) => void;
 }
 
 export default function RoundCounter({
   currentRound,
-  totalRounds,
   roundIsEditable,
   setCurrentRound,
 }: RoundCounterProps) {

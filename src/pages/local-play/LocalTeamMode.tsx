@@ -58,7 +58,6 @@ export default function LocalGame() {
         <div className="my-4 flex justify-center">
           <RoundCounter 
             currentRound={selected_round} 
-            totalRounds={rounds} 
             roundIsEditable={true}
             setCurrentRound={setSelectedRound}
           />

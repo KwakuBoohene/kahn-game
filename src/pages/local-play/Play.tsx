@@ -173,7 +173,7 @@ export default function Play() {
         <div className="flex flex-col items-center">
           {/* Timer */}
           <div className="px-6 py-2">
-            <RoundCounter currentRound={selected_round} totalRounds={rounds} roundIsEditable={false} setCurrentRound={setSelectedRound} />
+            <RoundCounter currentRound={selected_round}  roundIsEditable={false} setCurrentRound={setSelectedRound} />
           </div>
           <div className="my-4">
             <GameTimer game_time={game_time} sendTimeToParent={getTimeFromTimer} />

@@ -9,7 +9,6 @@ export default function GameSelectionButton({
   onClick,
   children,
   className = "",
-  isEditable = true,
 }: GameSelectionButtonProps) {
   return (
     <div

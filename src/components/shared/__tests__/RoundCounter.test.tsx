@@ -8,7 +8,7 @@ describe('RoundCounter', () => {
     render(
       <RoundCounter 
         currentRound={1} 
-        totalRounds={5} 
+      
         roundIsEditable={false}
         setCurrentRound={setCurrentRound}
       />
@@ -23,7 +23,7 @@ describe('RoundCounter', () => {
     render(
       <RoundCounter 
         currentRound={1} 
-        totalRounds={5} 
+
         roundIsEditable={true}
         setCurrentRound={setCurrentRound}
       />
@@ -42,7 +42,7 @@ describe('RoundCounter', () => {
     render(
       <RoundCounter 
         currentRound={1} 
-        totalRounds={5} 
+
         roundIsEditable={false}
         setCurrentRound={setCurrentRound}
       />
@@ -57,7 +57,7 @@ describe('RoundCounter', () => {
     render(
       <RoundCounter 
         currentRound={1} 
-        totalRounds={5} 
+ 
         roundIsEditable={true}
         setCurrentRound={setCurrentRound}
       />
