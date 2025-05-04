@@ -1,20 +1,29 @@
-# Use Node.js LTS
+# Use an official Node.js runtime as a parent image
 FROM node:20.11.1
 
-# Set working directory
-WORKDIR /app
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Copy package files
+# Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy project files
+# install forever to run the project
+RUN npm install -g forever
+
 COPY . .
+# run the build command for the project
+RUN ls && npm run build
 
-# Expose Vite dev server port
-EXPOSE 5173
 
-# Start development server with host flag to allow external access
-CMD ["npm", "run", "dev", "--", "--host"]
+
+
+
+
+# Expose the port the app runs on
+EXPOSE 3001
+
+# Command to run the app
+CMD [ "forever", "server.js" ]
